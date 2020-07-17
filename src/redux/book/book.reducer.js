@@ -1,29 +1,31 @@
 import { BookActionTypes } from './book.types';
 
 const INITIAL_STATE = {
-    pending: false,
-    books: [],
+    loading: false,
+    items: [],
     error: null
 };
 
 const bookReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case BookActionTypes.FETCH_BOOKS_PENDING:
+        case BookActionTypes.FETCH_BOOKS_BEGIN:
             return {
                 ...state,
-                pending: true
+                loading: true,
+                error: null
             };
         case BookActionTypes.FETCH_BOOKS_SUCCESS:
             return {
                 ...state,
                 pending: false,
-                books: action.payload
+                items: action.payload.books
             };
-        case BookActionTypes.FETCH_BOOKS_ERROR:
+        case BookActionTypes.FETCH_BOOKS_FAILURE:
             return {
                 ...state,
                 pending: false,
-                error: action.payload
+                error: action.payload.error,
+                items: []
             };
         default:
             return state;

@@ -11,7 +11,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    bookReducer
+    books: bookReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);
