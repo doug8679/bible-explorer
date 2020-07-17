@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import CardColumns from 'react-bootstrap/CardColumns';
+
 import { fetchBooks } from '../../redux/book/book.actions';
 
-import Book from '../Book/book.component';
+import Book from '../book/book.component';
 
 import './book-list.styles.scss';
 
@@ -24,11 +26,11 @@ class BookList extends React.Component {
         }
 
         return (
-            <div className="book-list">
-            {books.map(book =>
-                    <Book key={book.id} book={book} />
+            <CardColumns>
+                {books.map(book =>
+                        <Book key={book.id} book={book} />
                 )}
-            </div>
+            </CardColumns>
         );
     }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import CardColumns from 'react-bootstrap/CardColumns';
+
 import { fetchBibles } from '../../redux/bible/bible.actions';
 
 import Bible from '../bible/bible.component';
@@ -24,11 +26,11 @@ class BibleList extends React.Component {
         }
 
         return (
-            <div className="bible-list">
-            {bibles.map(bible =>
-                    <Bible key={bible.id} bible={bible} />
-                )}
-            </div>
+            <CardColumns>
+                    {bibles.map(bible =>
+                        <Bible key={bible.id} bible={bible} />
+                    )}
+            </CardColumns>
         );
     }
 }

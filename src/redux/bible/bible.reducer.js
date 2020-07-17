@@ -8,19 +8,19 @@ const INITIAL_STATE = {
 
 const bibleReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case BibleActionTypes.FETCH_BOOKS_BEGIN:
+        case BibleActionTypes.FETCH_BIBLES_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
-        case BibleActionTypes.FETCH_BOOKS_SUCCESS:
+        case BibleActionTypes.FETCH_BIBLES_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 items: action.payload.bibles
             };
-        case BibleActionTypes.FETCH_BOOKS_FAILURE:
+        case BibleActionTypes.FETCH_BIBLES_FAILURE:
             return {
                 ...state,
                 loading: false,
