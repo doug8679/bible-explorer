@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { fetchBooks } from '../../redux/book/book.actions';
 
+import Book from '../Book/book.component';
+
 import './book-list.styles.scss';
 
 class BookList extends React.Component {
@@ -22,11 +24,11 @@ class BookList extends React.Component {
         }
 
         return (
-            <ul>
-                {books.map(book =>
-                    <li key={book.id}>{book.name}</li>
+            <div className="book-list">
+            {books.map(book =>
+                    <Book key={book.id} book={book} />
                 )}
-            </ul>
+            </div>
         );
     }
 }

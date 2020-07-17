@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import bibleReducer from './bible/bible.reducer';
 import bookReducer from './book/book.reducer';
 
 const persistConfig = {
@@ -11,6 +12,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+    bibles: bibleReducer,
     books: bookReducer
 });
 

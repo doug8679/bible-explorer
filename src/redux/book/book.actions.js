@@ -1,6 +1,6 @@
 import { BookActionTypes } from './book.types';
 
-export const fetchBooks() {
+export function fetchBooks() {
     return dispatch => {
         dispatch(fetchBooksBegin());
         return fetch('https://api.scripture.api.bible/v1/bibles/06125adad2d5898a-01/books', {

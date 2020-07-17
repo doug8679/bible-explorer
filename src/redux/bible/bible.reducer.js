@@ -1,4 +1,4 @@
-import { BookActionTypes } from './book.types';
+import { BibleActionTypes } from './bible.types';
 
 const INITIAL_STATE = {
     loading: false,
@@ -6,21 +6,21 @@ const INITIAL_STATE = {
     error: null
 };
 
-const bookReducer = (state = INITIAL_STATE, action) => {
+const bibleReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case BookActionTypes.FETCH_BOOKS_BEGIN:
+        case BibleActionTypes.FETCH_BOOKS_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
-        case BookActionTypes.FETCH_BOOKS_SUCCESS:
+        case BibleActionTypes.FETCH_BOOKS_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                items: action.payload.books
+                items: action.payload.bibles
             };
-        case BookActionTypes.FETCH_BOOKS_FAILURE:
+        case BibleActionTypes.FETCH_BOOKS_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -32,4 +32,4 @@ const bookReducer = (state = INITIAL_STATE, action) => {
     }
 };
 
-export default bookReducer;
+export default bibleReducer;
