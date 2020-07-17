@@ -6,7 +6,7 @@ const Bible = ({ bible }) => (
     <div className="bible">
         <div className="content">
             <h1 className="title">{bible.name}</h1>
-            <span className="description">{bible.nameLong}</span>
+            <span className="description">{bible.description}</span>
         </div>
     </div>
 );
