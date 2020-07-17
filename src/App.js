@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.scss';
 
@@ -9,6 +10,9 @@ function App() {
   return (
     <div>
       <Header />
+      <Switch>
+        <Route path="/" component={HomePage} />
+      </Switch>
       <HomePage />
     </div>
   );
